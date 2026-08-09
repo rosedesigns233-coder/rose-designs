@@ -1,137 +1,773 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rose Designs | Creative Design Studio</title>
+  <title>Rose Designs | Creative Design Studio</title>
+  <meta name="description" content="Rose Designs creates professional logos, brand identities, social media designs and business cards for businesses and entrepreneurs.">
 
-    <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    :root {
+      --pink: #c2185b;
+      --light-pink: #fff0f6;
+      --dark: #111111;
+      --gray: #666;
+      --border: #eeeeee;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #111;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 27px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      margin-right: 8px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #ff4f93;
+    }
+
+    .nav-button {
+      background: var(--pink);
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+
+    .nav-button:hover {
+      color: white;
+      background: #a9144d;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #fff0f6, #ffffff);
+      padding: 95px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      color: var(--dark);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--pink);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 20px;
+      color: #555;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: var(--pink);
+      color: white;
+    }
+
+    .primary:hover {
+      background: #a9144d;
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      border: 2px solid var(--pink);
+      color: var(--pink);
+      background: white;
+    }
+
+    .secondary:hover {
+      background: var(--light-pink);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 85px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 650px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #fafafa;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: var(--pink);
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--light-pink);
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      color: var(--pink);
+      font-size: 42px;
+      margin-bottom: 25px;
+    }
+
+    .about-content p {
+      font-size: 19px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      background: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+      transition: 0.25s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-image {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .restaurant {
+      background: #151515;
+      color: #d9a441;
+    }
+
+    .apparel {
+      background: #eee7dc;
+      color: #222;
+    }
+
+    .barber {
+      background: #202020;
+      color: #e0b95a;
+    }
+
+    .cafe {
+      background: #e7eadc;
+      color: #43502b;
+    }
+
+    .fitness {
+      background: #151515;
+      color: white;
+    }
+
+    .business {
+      background: #f3e6ed;
+      color: var(--pink);
+    }
+
+    .project-logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .project-logo small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-category {
+      color: var(--pink);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .project-info h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .project-info p {
+      color: #666;
+    }
+
+    /* WHY US */
+
+    .why {
+      background: #fafafa;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .why-card h3 {
+      color: var(--pink);
+      margin: 12px 0 8px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--light-pink);
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      color: var(--pink);
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .email-box {
+      display: inline-block;
+      background: white;
+      border: 1px solid #eee;
+      padding: 15px 22px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      color: var(--pink);
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      color: #bbb;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .nav-button {
+        display: none;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        flex-direction: column;
+        padding: 15px 10px;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 70px 18px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 16px;
+      }
+
+      .section-title h2,
+      .about-content h2,
+      .contact h2 {
+        font-size: 34px;
+      }
+
+      .service-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 210px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">🌹 Rose Designs</div>
+  <!-- NAVIGATION -->
+  <header>
+    <div class="nav">
+      <a href="#home" class="logo">
+        <span>🌹</span>Rose Designs
+      </a>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-button" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Designs that make<br><span>your brand stand out.</span></h1>
 
-    <!-- Home -->
-    <section id="home">
-        <h1>🌹 Welcome to Rose Designs</h1>
+      <p>
+        Rose Designs helps businesses and entrepreneurs turn their ideas
+        into professional, memorable visual identities.
+      </p>
 
-        <h2>Your Creative Design Partner</h2>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="button primary">View Our Work</a>
+        <a href="#contact" class="button secondary">Get a Quote</a>
+      </div>
+    </div>
+  </section>
 
-        <p>
-            We help businesses build strong and memorable brands
-            with creative and professional designs.
-        </p>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
 
-        <a href="#contact">Work With Us</a>
-    </section>
-
-
-    <!-- Services -->
-    <section id="services">
+      <div class="section-title">
         <h2>Our Services</h2>
+        <p>Professional design solutions built around your brand.</p>
+      </div>
 
-        <div>
-            <h3>🎨 Logo Design</h3>
-            <p>Professional and memorable logos for your business.</p>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Logo Design</h3>
+          <p>Professional and memorable logos created for your business.</p>
+          <a href="#contact" class="button secondary">Request a Quote</a>
         </div>
 
-        <div>
-            <h3>🌹 Brand Identity</h3>
-            <p>Build a consistent and professional identity for your brand.</p>
+        <div class="service-card">
+          <div class="service-icon">🌹</div>
+          <h3>Brand Identity</h3>
+          <p>Build a consistent and professional identity for your brand.</p>
+          <a href="#contact" class="button secondary">Request a Quote</a>
         </div>
 
-        <div>
-            <h3>📱 Social Media Design</h3>
-            <p>Creative designs to make your social media look professional.</p>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Design</h3>
+          <p>Creative posts and visuals that make your social media stand out.</p>
+          <a href="#contact" class="button secondary">Request a Quote</a>
         </div>
 
-        <div>
-            <h3>💳 Business Cards</h3>
-            <p>Modern business cards that represent your brand.</p>
+        <div class="service-card">
+          <div class="service-icon">💳</div>
+          <h3>Business Cards</h3>
+          <p>Modern business cards designed to represent your brand.</p>
+          <a href="#contact" class="button secondary">Request a Quote</a>
         </div>
-    </section>
 
+      </div>
+    </div>
+  </section>
 
-    <!-- About -->
-    <section id="about">
-        <h2>About Rose Designs</h2>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-content">
 
-        <p>
-            Rose Designs is a creative design business focused on helping
-            small businesses and entrepreneurs create professional brands.
-        </p>
+      <h2>About Rose Designs</h2>
 
-        <p>
-            Our goal is simple: turn your ideas into designs that people
-            remember.
-        </p>
-    </section>
+      <p>
+        Rose Designs is a creative design business focused on helping
+        small businesses and entrepreneurs create professional brands.
+      </p>
 
+      <p>
+        Our goal is simple: turn your ideas into designs that people remember.
+      </p>
 
-    <!-- Portfolio -->
-    <section id="portfolio">
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+
+      <div class="section-title">
         <h2>Our Portfolio</h2>
-
         <p>
-            Our best designs will be displayed here.
+          Explore examples of the type of creative work Rose Designs can create
+          for different businesses.
         </p>
+      </div>
 
-        <div>
-            <h3>Logo Designs</h3>
-            <p>Creative logos made for different types of businesses.</p>
+      <div class="portfolio-grid">
+
+        <div class="project">
+          <div class="project-image restaurant">
+            <div class="project-logo">
+              FLAVORO
+              <small>RESTAURANT</small>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Logo Design</div>
+            <h3>Flavoro Restaurant</h3>
+            <p>Elegant branding concept for a premium restaurant.</p>
+          </div>
         </div>
 
-        <div>
-            <h3>Social Media Designs</h3>
-            <p>Professional posts and promotional designs.</p>
+        <div class="project">
+          <div class="project-image apparel">
+            <div class="project-logo">
+              NOBLE
+              <small>APPAREL</small>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Brand Identity</div>
+            <h3>Noble Apparel</h3>
+            <p>Modern identity concept for a clothing brand.</p>
+          </div>
         </div>
 
-        <div>
-            <h3>Brand Designs</h3>
-            <p>Complete visual identities for businesses.</p>
+        <div class="project">
+          <div class="project-image barber">
+            <div class="project-logo">
+              CUT & CLASS
+              <small>BARBER SHOP</small>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Logo Design</div>
+            <h3>Cut & Class</h3>
+            <p>Classic and strong branding concept for a barbershop.</p>
+          </div>
         </div>
-    </section>
 
+        <div class="project">
+          <div class="project-image cafe">
+            <div class="project-logo">
+              LEAF & BEAN
+              <small>CAFÉ</small>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Brand Identity</div>
+            <h3>Leaf & Bean Café</h3>
+            <p>Natural and minimal identity concept for a cozy café.</p>
+          </div>
+        </div>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact Rose Designs</h2>
+        <div class="project">
+          <div class="project-image fitness">
+            <div class="project-logo">
+              FITFORCE
+              <small>FITNESS</small>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Social Media Design</div>
+            <h3>FitForce Gym</h3>
+            <p>Strong social-media visual concept for a fitness brand.</p>
+          </div>
+        </div>
 
-        <p>
-            Ready to build your brand?
-        </p>
+        <div class="project">
+          <div class="project-image business">
+            <div class="project-logo">
+              ROSE
+              <small>BUSINESS CARD</small>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Business Card</div>
+            <h3>Rose Business</h3>
+            <p>Clean and professional business-card concept.</p>
+          </div>
+        </div>
 
-        <p>
-            📧 Email:
-            <a href="mailto:rosedesigns233@gmail.com">
-                rosedesigns233@gmail.com
-            </a>
-        </p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-            Send us a message and tell us what design you need.
-        </p>
-    </section>
+  <!-- WHY US -->
+  <section class="why">
+    <div class="container">
 
+      <div class="section-title">
+        <h2>Why Rose Designs?</h2>
+        <p>We focus on making your brand look professional and memorable.</p>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Rose Designs. All rights reserved.</p>
-    </footer>
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="service-icon">✨</div>
+          <h3>Creative</h3>
+          <p>Original ideas designed around your business.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="service-icon">🎯</div>
+          <h3>Professional</h3>
+          <p>Clean designs made to give your brand a strong image.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="service-icon">🤝</div>
+          <h3>Personal</h3>
+          <p>We work with you to understand your vision and goals.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-box">
+
+      <h2>Let's Create Something Great</h2>
+
+      <p>
+        Have a project in mind? Contact Rose Designs and tell us what
+        you need. We'll discuss your idea and create a design for you.
+      </p>
+
+      <div class="email-box">
+        📧 rose.designs233@gmail.com
+      </div>
+
+      <br>
+
+      <a
+        href="mailto:YOUR_GMAIL_HERE?subject=Rose%20Designs%20Project"
+        class="button primary">
+        Contact Rose Designs
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>🌹 Rose Designs</p>
+    <p>Creative designs for memorable brands.</p>
+    <p>© 2026 Rose Designs. All rights reserved.</p>
+  </footer>
 
 </body>
-  </html>
+    </html>
