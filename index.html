@@ -1,21 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rose Designs | Creative Design Studio</title>
+<title>Rose Designs | Creative Design Studio</title>
 
-    <meta name="description"
-          content="Rose Designs creates professional logos, brand identities, social media designs and business cards.">
+<meta name="description" content="Rose Designs creates professional logos, brand identities, social media designs and business cards.">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+}
+
+section {
+    padding: 90px 5%;
+}
+
+h2 {
+    text-align: center;
+    color: #c2185b;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    text-align: center;
+    color: #666;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #111;
+    color: white;
+    padding: 22px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #c2185b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff1f6;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 62px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.hero h1 span {
+    color: #c2185b;
+}
+
+.hero p {
+    font-size: 23px;
+    color: #555;
+    max-width: 800px;
+    margin: auto auto 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.primary {
+    background: #c2185b;
+    color: white;
+}
+
+.secondary {
+    border: 2px solid #c2185b;
+    color: #c2185b;
+    background: white;
+}
+
+.primary:hover {
+    background: #a3154d;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: white;
+}
+
+.service-grid,
+.why-grid,
+.pricing-grid,
+.portfolio-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+}
+
+.service-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card,
+.why-card {
+    background: white;
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.service-icon,
+.why-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.service-card h3,
+.why-card h3 {
+    color: #c2185b;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.service-card p,
+.why-card p {
+    color: #666;
+    font-size: 18px;
+}
+
+.small-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 2px solid #c2185b;
+    border-radius: 8px;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+
+/* =========================
+   WHY
+========================= */
+
+.why {
+    background: #fafafa;
+}
+
+.why-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing {
+    background: #fafafa;
+}
+
+.pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.price-card {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+.price-card.featured {
+    border: 3px solid #c2185b;
+}
+
+.popular {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #c2185b;
+    color: white;
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.price-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.price-card h3 {
+    color: #c2185b;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.price strong {
+    color: #111;
+    font-size: 27px;
+}
+
+.price-card ul {
+    list-style: none;
+    text-align: left;
+    max-width: 260px;
+    margin: 0 auto 30px;
+}
+
+.price-card li {
+    margin: 12px 0;
+    color: #555;
+}
+
+.price-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 9px;
+    background: #c2185b;
+    color: white;
+    font-weight: bold;
+}
+
+.custom-price {
+    max-width: 750px;
+    margin: 60px auto 0;
+    padding: 40px 25px;
+    text-align: center;
+    background: #fff1f6;
+    border-radius: 20px;
+}
+
+.custom-price h3 {
+    font-size: 28px;
+    color: #c2185b;
+    margin-bottom: 10px;
+}
+
+.custom-price p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #fff1f6;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about p {
+    font-size: 21px;
+    color: #555;
+    margin: 20px 0;
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio {
+    background: white;
+}
+
+.portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.portfolio-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.portfolio-preview {
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-preview h3 {
+    font-size: 42px;
+    letter-spacing: 4px;
+}
+
+.portfolio-preview span {
+    margin-top: 10px;
+    letter-spacing: 5px;
+    font-size: 14px;
+}
+
+.flavora {
+    background: #111;
+    color: #d9a441;
+}
+
+.noble {
+    background: #eee8dc;
+    color: #111;
+}
+
+.velora {
+    background: #5b4636;
+    color: #f5d6a0;
+}
+
+.crown {
+    background: #151515;
+    color: #d4af37;
+}
+
+.luna {
+    background: #eee4ef;
+    color: #5c315e;
+}
+
+.nexa {
+    background: #e8f1f8;
+    color: #164f73;
+}
+
+.portfolio-info {
+    padding: 30px;
+}
+
+.portfolio-type {
+    color: #c2185b;
+    font-weight: bold;
+}
+
+.portfolio-info h3 {
+    font-size: 27px;
+    margin: 8px 0;
+}
+
+.portfolio-info p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.portfolio-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #c2185b;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTACT / QUOTE FORM
+========================= */
+
+.contact {
+    background: #fff1f6;
+}
+
+.contact-box {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 44px;
+}
+
+.contact-box > p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#quoteForm {
+    max-width: 650px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#quoteForm input,
+#quoteForm select,
+#quoteForm textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    background: white;
+}
+
+#quoteForm textarea {
+    resize: vertical;
+}
+
+#quoteForm input:focus,
+#quoteForm select:focus,
+#quoteForm textarea:focus {
+    outline: none;
+    border-color: #c2185b;
+}
+
+.quote-submit {
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #c2185b;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quote-submit:hover {
+    background: #a3154d;
+}
+
+.email-box {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    color: #c2185b;
+    font-weight: bold;
+    margin: 30px auto;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #bbb;
+    margin: 8px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    section {
+        padding: 70px 5%;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 19px;
+    }
+
+    .service-grid,
+    .why-grid,
+    .pricing-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-card {
+        padding: 35px 25px;
+    }
+
+    .custom-price {
+        margin-top: 40px;
+    }
+
+    .portfolio-preview {
+        height: 220px;
+    }
+
+    .portfolio-preview h3 {
+        font-size: 34px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <div class="logo">🌹 Rose Designs</div>
+
+    <div class="logo">
+        🌹 Rose Designs
+    </div>
 
     <nav>
         <a href="#home">Home</a>
@@ -25,10 +641,11 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
 
-<!-- HOME -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -75,6 +692,7 @@
     <div class="service-grid">
 
         <div class="service-card">
+
             <div class="service-icon">🎨</div>
 
             <h3>Logo Design</h3>
@@ -87,10 +705,12 @@
             <a href="#pricing" class="small-button">
                 View Packages
             </a>
+
         </div>
 
 
         <div class="service-card">
+
             <div class="service-icon">🌹</div>
 
             <h3>Brand Identity</h3>
@@ -103,10 +723,12 @@
             <a href="#pricing" class="small-button">
                 View Packages
             </a>
+
         </div>
 
 
         <div class="service-card">
+
             <div class="service-icon">📱</div>
 
             <h3>Social Media Design</h3>
@@ -119,10 +741,12 @@
             <a href="#pricing" class="small-button">
                 View Packages
             </a>
+
         </div>
 
 
         <div class="service-card">
+
             <div class="service-icon">💳</div>
 
             <h3>Business Cards</h3>
@@ -135,6 +759,7 @@
             <a href="#pricing" class="small-button">
                 View Packages
             </a>
+
         </div>
 
     </div>
@@ -142,7 +767,7 @@
 </section>
 
 
-<!-- WHY US -->
+<!-- WHY ROSE DESIGNS -->
 
 <section class="why">
 
@@ -155,6 +780,7 @@
     <div class="why-grid">
 
         <div class="why-card">
+
             <div class="why-icon">✨</div>
 
             <h3>Creative</h3>
@@ -162,10 +788,12 @@
             <p>
                 Original ideas designed around your business.
             </p>
+
         </div>
 
 
         <div class="why-card">
+
             <div class="why-icon">🎯</div>
 
             <h3>Professional</h3>
@@ -174,10 +802,12 @@
                 Clean designs created to give your brand
                 a professional image.
             </p>
+
         </div>
 
 
         <div class="why-card">
+
             <div class="why-icon">💡</div>
 
             <h3>Memorable</h3>
@@ -185,6 +815,7 @@
             <p>
                 Designs made to help people remember your brand.
             </p>
+
         </div>
 
     </div>
@@ -202,11 +833,8 @@
         Simple packages with clear starting prices.
     </p>
 
-
     <div class="pricing-grid">
 
-
-        <!-- LOGO -->
 
         <div class="price-card">
 
@@ -233,8 +861,6 @@
 
         </div>
 
-
-        <!-- BRAND -->
 
         <div class="price-card featured">
 
@@ -266,8 +892,6 @@
         </div>
 
 
-        <!-- SOCIAL MEDIA -->
-
         <div class="price-card">
 
             <div class="price-icon">📱</div>
@@ -293,8 +917,6 @@
 
         </div>
 
-
-        <!-- BUSINESS CARD -->
 
         <div class="price-card">
 
@@ -334,7 +956,7 @@
         </p>
 
         <a
-            href="mailto:rose.designs233@gmail.com?subject=Custom%20Project%20Quote"
+            href="#contact"
             class="button primary">
             Request Custom Quote
         </a>
@@ -378,15 +1000,16 @@
         Creative brand concepts designed by Rose Designs.
     </p>
 
-
     <div class="portfolio-grid">
 
 
         <div class="portfolio-card">
 
             <div class="portfolio-preview flavora">
+
                 <h3>FLAVORO</h3>
                 <span>RESTAURANT</span>
+
             </div>
 
             <div class="portfolio-info">
@@ -416,8 +1039,10 @@
         <div class="portfolio-card">
 
             <div class="portfolio-preview noble">
+
                 <h3>NOBLE</h3>
                 <span>APPAREL</span>
+
             </div>
 
             <div class="portfolio-info">
@@ -447,8 +1072,10 @@
         <div class="portfolio-card">
 
             <div class="portfolio-preview velora">
+
                 <h3>VELORA</h3>
                 <span>COFFEE • EST. 2026</span>
+
             </div>
 
             <div class="portfolio-info">
@@ -478,8 +1105,10 @@
         <div class="portfolio-card">
 
             <div class="portfolio-preview crown">
+
                 <h3>CROWN</h3>
                 <span>BARBERSHOP</span>
+
             </div>
 
             <div class="portfolio-info">
@@ -509,8 +1138,10 @@
         <div class="portfolio-card">
 
             <div class="portfolio-preview luna">
+
                 <h3>LUNA</h3>
                 <span>BEAUTY STUDIO</span>
+
             </div>
 
             <div class="portfolio-info">
@@ -540,8 +1171,10 @@
         <div class="portfolio-card">
 
             <div class="portfolio-preview nexa">
+
                 <h3>NEXA</h3>
                 <span>TECHNOLOGY</span>
+
             </div>
 
             <div class="portfolio-info">
@@ -572,43 +1205,178 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- QUOTE REQUEST -->
 
 <section class="contact" id="contact">
 
     <div class="contact-box">
 
-        <h2>Let's Create Something Great</h2>
+        <h2>Request a Quote</h2>
 
         <p>
-            Have a project in mind?
-            Contact Rose Designs and tell us what you need.
+            Tell us about your project and we'll get back to you.
         </p>
 
         <div class="email-box">
             📧 rose.designs233@gmail.com
         </div>
 
-        <a
-            href="mailto:rose.designs233@gmail.com?subject=Rose%20Designs%20Project"
-            class="button primary contact-button">
-            Contact Rose Designs
-        </a>
+        <form id="quoteForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your name"
+                required
+            >
+
+            <select id="service" required>
+
+                <option value="">
+                    Choose a service
+                </option>
+
+                <option value="Logo Design">
+                    Logo Design
+                </option>
+
+                <option value="Brand Identity">
+                    Brand Identity
+                </option>
+
+                <option value="Social Media Design">
+                    Social Media Design
+                </option>
+
+                <option value="Business Card">
+                    Business Card
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <select id="budget" required>
+
+                <option value="">
+                    Your budget
+                </option>
+
+                <option value="Under 150 MAD">
+                    Under 150 MAD
+                </option>
+
+                <option value="150 - 300 MAD">
+                    150 - 300 MAD
+                </option>
+
+                <option value="300 - 500 MAD">
+                    300 - 500 MAD
+                </option>
+
+                <option value="500+ MAD">
+                    500+ MAD
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="details"
+                placeholder="Tell us about your project..."
+                rows="6"
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="quote-submit">
+                Send Quote Request
+            </button>
+
+        </form>
 
     </div>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
     <h3>🌹 Rose Designs</h3>
 
-    <p>Creative designs for memorable brands.</p>
+    <p>
+        Creative designs for memorable brands.
+    </p>
 
-    <p>© 2026 Rose Designs. All rights reserved.</p>
+    <p>
+        © 2026 Rose Designs. All rights reserved.
+    </p>
 
 </footer>
 
+
+<!-- QUOTE FORM SCRIPT -->
+
+<script>
+
+document
+.getElementById("quoteForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const service =
+        document.getElementById("service").value;
+
+    const budget =
+        document.getElementById("budget").value;
+
+    const details =
+        document.getElementById("details").value;
+
+
+    const subject = encodeURIComponent(
+        "Rose Designs Quote Request - " + service
+    );
+
+
+    const body = encodeURIComponent(
+
+        "Hello Rose Designs,\n\n" +
+
+        "Name: " + name + "\n" +
+
+        "Service: " + service + "\n" +
+
+        "Budget: " + budget + "\n\n" +
+
+        "Project details:\n" +
+
+        details
+
+    );
+
+
+    window.location.href =
+        "mailto:rose.designs233@gmail.com?subject=" +
+        subject +
+        "&body=" +
+        body;
+
+});
+
+</script>
+
+
 </body>
-            </html>
+    </html>
