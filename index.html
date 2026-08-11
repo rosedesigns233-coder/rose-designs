@@ -1,689 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rose Designs - Professional branding, logo and visual identity design.">
-  <title>Rose Designs | Creative Design Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    <title>Rose Designs | Professional Branding & Design</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #fff;
-      line-height: 1.6;
-    }
+    <meta name="description"
+          content="Rose Designs creates professional logos, brand identities, social media designs and business visuals for modern brands.">
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #111;
-      color: white;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-    }
+    <meta name="keywords"
+          content="Rose Designs, logo design, branding, brand identity, social media design, Morocco">
 
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
+    <meta name="author" content="Rose Designs">
 
-    .logo {
-      font-size: 30px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      margin-right: 8px;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #c21868;
-    }
-
-    section {
-      padding: 90px 25px;
-    }
-
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: #fff5f9;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-      color: #111;
-    }
-
-    .hero h1 span {
-      color: #c21868;
-    }
-
-    .hero p {
-      font-size: 21px;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto 35px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 16px 35px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 17px;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #c21868;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #9f1455;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 2px solid #c21868;
-      color: #c21868;
-      background: white;
-    }
-
-    .btn-outline:hover {
-      background: #c21868;
-      color: white;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title h2 {
-      font-size: 48px;
-      color: #c21868;
-      margin-bottom: 15px;
-    }
-
-    .section-title p {
-      color: #666;
-      font-size: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: white;
-    }
-
-    .cards {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .card {
-      padding: 35px 25px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-    }
-
-    .card-icon {
-      font-size: 55px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      color: #c21868;
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: #666;
-      font-size: 17px;
-    }
-
-    /* PRICING */
-
-    .pricing {
-      background: #fafafa;
-    }
-
-    .price-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .price-card {
-      background: white;
-      border: 2px solid #c21868;
-      border-radius: 20px;
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .price-card h3 {
-      color: #c21868;
-      font-size: 29px;
-      margin-bottom: 20px;
-    }
-
-    .price {
-      font-size: 35px;
-      font-weight: 800;
-      margin-bottom: 25px;
-    }
-
-    .price-card ul {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .price-card li {
-      margin: 12px 0;
-      color: #555;
-    }
-
-    .price-card li::before {
-      content: "✓ ";
-      color: #c21868;
-      font-weight: bold;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: white;
-    }
-
-    .about-box {
-      max-width: 950px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about-box h3 {
-      font-size: 40px;
-      color: #c21868;
-      margin-bottom: 20px;
-    }
-
-    .about-box p {
-      font-size: 20px;
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    /* PORTFOLIO */
-
-    .portfolio {
-      background: #fff;
-    }
-
-    .portfolio-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    .portfolio-item {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      transition: 0.3s;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
-    }
-
-    .portfolio-item img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 5 / 4;
-      object-fit: cover;
-    }
-
-    .portfolio-info {
-      padding: 22px;
-    }
-
-    .portfolio-info h3 {
-      color: #c21868;
-      font-size: 27px;
-      margin-bottom: 5px;
-    }
-
-    .portfolio-info p {
-      color: #666;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #fff0f6;
-      text-align: center;
-    }
-
-    .contact-box {
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .contact-box h2 {
-      font-size: 50px;
-      color: #c21868;
-      margin-bottom: 20px;
-    }
-
-    .contact-box p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .email {
-      display: inline-block;
-      margin-top: 25px;
-      font-size: 19px;
-      color: #c21868;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer p {
-      color: #ccc;
-      margin: 5px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      .navbar {
-        flex-direction: column;
-      }
-
-      .logo {
-        font-size: 27px;
-      }
-
-      nav {
-        gap: 15px;
-        font-size: 15px;
-      }
-
-      section {
-        padding: 70px 18px;
-      }
-
-      .hero {
-        min-height: 75vh;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .section-title h2 {
-        font-size: 38px;
-      }
-
-      .cards,
-      .price-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-box h2 {
-        font-size: 38px;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-  <header>
-    <div class="navbar">
+<header class="header">
+    <div class="logo">
+        🌹 <span>Rose Designs</span>
+    </div>
 
-      <div class="logo">
-        <span>🌹</span> Rose Designs
-      </div>
-
-      <nav>
+    <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
-      </nav>
-
-    </div>
-  </header>
+    </nav>
+</header>
 
 
-  <!-- HOME -->
+<!-- ================= HOME ================= -->
 
-  <section class="hero" id="home">
+<section id="home" class="hero">
 
     <div class="hero-content">
 
-      <h1>
-        Designs that make
-        <span>your brand stand out.</span>
-      </h1>
+        <h1>
+            Designs that make
+            <span>your brand stand out.</span>
+        </h1>
 
-      <p>
-        Rose Designs helps businesses and entrepreneurs
-        turn their ideas into professional, memorable
-        visual identities.
-      </p>
+        <p>
+            Rose Designs helps businesses and entrepreneurs
+            turn their ideas into professional, memorable
+            visual identities.
+        </p>
 
-      <div class="buttons">
-        <a href="#portfolio" class="btn btn-primary">
-          View Our Work
-        </a>
+        <div class="hero-buttons">
+            <a href="#portfolio" class="btn primary">
+                View Our Work
+            </a>
 
-        <a href="#contact" class="btn btn-outline">
-          Get a Quote
-        </a>
-      </div>
+            <a href="#contact" class="btn secondary">
+                Get a Quote
+            </a>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
-  <section class="services" id="services">
+<section id="services" class="section">
+
+    <div class="section-title">
+        <h2>Our Services</h2>
+
+        <p>
+            Professional design solutions built around your business.
+        </p>
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🎨</div>
+
+            <h3>Logo Design</h3>
+
+            <p>
+                Professional and memorable logos created
+                specifically for your business.
+            </p>
+
+            <strong>From 150 MAD</strong>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">✨</div>
+
+            <h3>Brand Identity</h3>
+
+            <p>
+                Build a complete visual identity that makes
+                your brand recognizable.
+            </p>
+
+            <strong>From 400 MAD</strong>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">📱</div>
+
+            <h3>Social Media Design</h3>
+
+            <p>
+                Professional visuals designed to make your
+                social media look consistent and attractive.
+            </p>
+
+            <strong>From 100 MAD</strong>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">💼</div>
+
+            <h3>Business Design</h3>
+
+            <p>
+                Business cards, posters, promotional materials
+                and more.
+            </p>
+
+            <strong>From 100 MAD</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section id="pricing" class="section pricing-section">
 
     <div class="section-title">
 
-      <h2>Our Services</h2>
+        <h2>Pricing</h2>
 
-      <p>
-        Professional design solutions built around
-        your business.
-      </p>
+        <p>
+            Simple starting prices for our most popular
+            design services.
+        </p>
+
+    </div>
+
+
+    <div class="pricing-card">
+
+        <h3>Logo Design</h3>
+
+        <div class="price">
+            From 150 MAD
+        </div>
+
+        <ul>
+            <li>✓ Professional logo</li>
+            <li>✓ Custom concept</li>
+            <li>✓ High quality design</li>
+            <li>✓ Delivered digitally</li>
+        </ul>
+
+        <a href="#contact" class="btn primary">
+            Choose Logo
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section about-section">
+
+    <div class="section-title">
+
+        <h2>Why Rose Designs?</h2>
+
+        <p>
+            We focus on making your brand look professional
+            and memorable.
+        </p>
 
     </div>
 
 
     <div class="cards">
 
-      <div class="card">
-        <div class="card-icon">🎨</div>
-        <h3>Logo Design</h3>
-        <p>
-          Professional and memorable logos created
-          for your business.
-        </p>
-      </div>
+        <div class="card">
+
+            <div class="icon">💫</div>
+
+            <h3>Creative</h3>
+
+            <p>
+                Original ideas designed around your business.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <div class="card-icon">✨</div>
-        <h3>Brand Identity</h3>
-        <p>
-          Complete visual identities that make your
-          brand recognizable.
-        </p>
-      </div>
+        <div class="card">
+
+            <div class="icon">🎯</div>
+
+            <h3>Professional</h3>
+
+            <p>
+                Clean and professional designs made to
+                represent your brand.
+            </p>
+
+        </div>
 
 
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Social Media Design</h3>
-        <p>
-          Attractive social media visuals designed
-          to make your business stand out.
-        </p>
-      </div>
+        <div class="card">
 
+            <div class="icon">⭐</div>
 
-      <div class="card">
-        <div class="card-icon">💼</div>
-        <h3>Business Cards</h3>
-        <p>
-          Elegant business cards that create a
-          professional first impression.
-        </p>
-      </div>
+            <h3>Memorable</h3>
 
+            <p>
+                Visual identities designed to help your
+                business stand out.
+            </p>
 
-      <div class="card">
-        <div class="card-icon">📦</div>
-        <h3>Packaging Design</h3>
-        <p>
-          Beautiful packaging concepts designed
-          around your brand.
-        </p>
-      </div>
-
-
-      <div class="card">
-        <div class="card-icon">🌟</div>
-        <h3>Custom Design</h3>
-        <p>
-          Unique visual concepts created specifically
-          for your project.
-        </p>
-      </div>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- PRICING -->
+<!-- ================= PORTFOLIO ================= -->
 
-  <section class="pricing" id="pricing">
+<section id="portfolio" class="section portfolio-section">
 
     <div class="section-title">
 
-      <h2>Pricing</h2>
+        <h2>Our Portfolio</h2>
 
-      <p>
-        Simple starting prices for our most popular
-        design services.
-      </p>
-
-    </div>
-
-
-    <div class="price-grid">
-
-      <div class="price-card">
-
-        <h3>Logo Design</h3>
-
-        <div class="price">
-          From 150 MAD
-        </div>
-
-        <ul>
-          <li>Professional logo</li>
-          <li>Custom concept</li>
-          <li>High quality design</li>
-        </ul>
-
-        <a href="#contact" class="btn btn-primary">
-          Choose Logo
-        </a>
-
-      </div>
-
-
-      <div class="price-card">
-
-        <h3>Brand Identity</h3>
-
-        <div class="price">
-          From 400 MAD
-        </div>
-
-        <ul>
-          <li>Logo design</li>
-          <li>Color palette</li>
-          <li>Typography</li>
-          <li>Brand style</li>
-        </ul>
-
-        <a href="#contact" class="btn btn-primary">
-          Choose Brand
-        </a>
-
-      </div>
-
-
-      <div class="price-card">
-
-        <h3>Social Media</h3>
-
-        <div class="price">
-          From 200 MAD
-        </div>
-
-        <ul>
-          <li>Social media designs</li>
-          <li>Professional visuals</li>
-          <li>Custom style</li>
-        </ul>
-
-        <a href="#contact" class="btn btn-primary">
-          Choose Social
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="about" id="about">
-
-    <div class="about-box">
-
-      <h3>Why Rose Designs?</h3>
-
-      <p>
-        We focus on making your brand look
-        professional, elegant and memorable.
-      </p>
-
-      <p>
-        Every project is designed around the
-        personality and goals of your business.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- PORTFOLIO -->
-
-  <section class="portfolio" id="portfolio">
-
-    <div class="section-title">
-
-      <h2>Our Portfolio</h2>
-
-      <p>
-        A selection of branding concepts created
-        by Rose Designs.
-      </p>
+        <p>
+            A selection of branding concepts created by Rose Designs.
+        </p>
 
     </div>
 
@@ -691,196 +265,392 @@
     <div class="portfolio-grid">
 
 
-      <!-- FLAVORO -->
+        <!-- FLAVORO -->
 
-      <div class="portfolio-item">
+        <article class="portfolio-card">
 
-        <img
-          src="flavoro-restaurant.png"
-          alt="Flavoro Restaurant branding"
-        >
+            <img
+                src="flavoro-restaurant.png"
+                alt="Flavaro Restaurant branding project"
+            >
 
-        <div class="portfolio-info">
+            <div class="portfolio-info">
 
-          <h3>Flavoro Restaurant</h3>
+                <h3>Flavaro Restaurant</h3>
 
-          <p>
-            Restaurant branding and visual identity.
-          </p>
+                <p>
+                    Restaurant branding and visual identity.
+                </p>
 
-        </div>
+            </div>
 
-      </div>
-
-
-      <!-- NOBLE -->
-
-      <div class="portfolio-item">
-
-        <img
-          src="noble-apparel.png"
-          alt="Noble Apparel branding"
-        >
-
-        <div class="portfolio-info">
-
-          <h3>Noble Apparel</h3>
-
-          <p>
-            Classy luxury fashion branding.
-          </p>
-
-        </div>
-
-      </div>
+        </article>
 
 
-      <!-- VELORA -->
+        <!-- NOBLE -->
 
-      <div class="portfolio-item">
+        <article class="portfolio-card">
 
-        <img
-          src="velora-cafe.png"
-          alt="Velora Cafe branding"
-        >
+            <img
+                src="noble-apparel.png"
+                alt="Noble Apparel branding project"
+            >
 
-        <div class="portfolio-info">
+            <div class="portfolio-info">
 
-          <h3>Velora Café</h3>
+                <h3>Noble Apparel</h3>
 
-          <p>
-            Elegant café branding and packaging.
-          </p>
+                <p>
+                    Classy luxury fashion branding.
+                </p>
 
-        </div>
+            </div>
 
-      </div>
-
-
-      <!-- CROWN -->
-
-      <div class="portfolio-item">
-
-        <img
-          src="crown-barbershop.png"
-          alt="Crown Barbershop branding"
-        >
-
-        <div class="portfolio-info">
-
-          <h3>Crown Barbershop</h3>
-
-          <p>
-            Premium barbershop visual identity.
-          </p>
-
-        </div>
-
-      </div>
+        </article>
 
 
-      <!-- LUNA -->
+        <!-- VELORA -->
 
-      <div class="portfolio-item">
+        <article class="portfolio-card">
 
-        <img
-          src="luna-beauty-studio.png"
-          alt="Luna Beauty Studio branding"
-        >
+            <img
+                src="velora-cafe.png"
+                alt="Velora Cafe branding project"
+            >
 
-        <div class="portfolio-info">
+            <div class="portfolio-info">
 
-          <h3>Luna Beauty Studio</h3>
+                <h3>Velora Café</h3>
 
-          <p>
-            Elegant beauty and skincare branding.
-          </p>
+                <p>
+                    Elegant café branding and packaging.
+                </p>
 
-        </div>
+            </div>
 
-      </div>
+        </article>
 
 
-      <!-- NEXA -->
+        <!-- CROWN -->
 
-      <div class="portfolio-item">
+        <article class="portfolio-card">
 
-        <img
-          src="nexa-tech.png"
-          alt="Nexa Technology branding"
-        >
+            <img
+                src="crown-barbershop.png"
+                alt="Crown Barbershop branding project"
+            >
 
-        <div class="portfolio-info">
+            <div class="portfolio-info">
 
-          <h3>Nexa Technology</h3>
+                <h3>Crown Barbershop</h3>
 
-          <p>
-            Modern technology brand identity.
-          </p>
+                <p>
+                    Premium barbershop visual identity.
+                </p>
 
-        </div>
+            </div>
 
-      </div>
+        </article>
+
+
+        <!-- LUNA -->
+
+        <article class="portfolio-card">
+
+            <img
+                src="luna-beauty-studio.png"
+                alt="Luna Beauty Studio branding project"
+            >
+
+            <div class="portfolio-info">
+
+                <h3>Luna Beauty Studio</h3>
+
+                <p>
+                    Elegant beauty and skincare branding.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEXA -->
+
+        <article class="portfolio-card">
+
+            <img
+                src="nexa-tech.png"
+                alt="Nexa Technology branding project"
+            >
+
+            <div class="portfolio-info">
+
+                <h3>Nexa Technology</h3>
+
+                <p>
+                    Modern technology brand identity.
+                </p>
+
+            </div>
+
+        </article>
 
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- CONTACT -->
+<!-- ================= CONTACT / GET A QUOTE ================= -->
 
-  <section class="contact" id="contact">
+<section id="contact" class="section contact-section">
 
-    <div class="contact-box">
+    <div class="section-title">
 
-      <h2>Let's Create Something Great</h2>
+        <h2>Let's Create Something Great</h2>
 
-      <p>
-        Have a project in mind?
-        Contact Rose Designs and let's bring
-        your idea to life.
-      </p>
-
-      <a
-        href="mailto:rose.designs233@gmail.com"
-        class="btn btn-primary"
-      >
-        Contact Rose Designs
-      </a>
-
-      <br>
-
-      <a
-        href="mailto:rose.designs233@gmail.com"
-        class="email"
-      >
-        rose.designs233@gmail.com
-      </a>
+        <p>
+            Have a project in mind? Tell us what you need
+            and let's build your brand.
+        </p>
 
     </div>
 
-  </section>
+
+    <div class="contact-container">
 
 
-  <!-- FOOTER -->
+        <!-- CONTACT INFORMATION -->
 
-  <footer>
+        <div class="contact-info">
+
+            <h3>Start Your Project</h3>
+
+            <p>
+                Ready to give your business a professional look?
+                Send us your project details and we'll get back
+                to you.
+            </p>
+
+
+            <div class="contact-item">
+
+                <strong>📧 Email</strong>
+
+                <a href="mailto:rose.designs233@gmail.com">
+                    rose.designs233@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>🎨 Services</strong>
+
+                <span>
+                    Logo • Branding • Social Media • Business Design
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>📍 Location</strong>
+
+                <span>
+                    Morocco
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUOTE FORM -->
+
+        <div class="quote-form">
+
+            <h3>Request a Quote</h3>
+
+            <form
+                action="mailto:rose.designs233@gmail.com"
+                method="post"
+                enctype="text/plain"
+            >
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="Name"
+                    placeholder="Your name"
+                    required
+                >
+
+
+                <label for="business">
+                    Business Name
+                </label>
+
+                <input
+                    type="text"
+                    id="business"
+                    name="Business"
+                    placeholder="Your business name"
+                >
+
+
+                <label for="service">
+                    What do you need?
+                </label>
+
+                <select
+                    id="service"
+                    name="Service"
+                    required
+                >
+
+                    <option value="">
+                        Select a service
+                    </option>
+
+                    <option value="Logo Design">
+                        Logo Design
+                    </option>
+
+                    <option value="Brand Identity">
+                        Brand Identity
+                    </option>
+
+                    <option value="Social Media Design">
+                        Social Media Design
+                    </option>
+
+                    <option value="Business Design">
+                        Business Design
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label for="budget">
+                    Estimated Budget
+                </label>
+
+                <select
+                    id="budget"
+                    name="Budget"
+                >
+
+                    <option value="">
+                        Select your budget
+                    </option>
+
+                    <option value="150-300 MAD">
+                        150–300 MAD
+                    </option>
+
+                    <option value="300-500 MAD">
+                        300–500 MAD
+                    </option>
+
+                    <option value="500-1000 MAD">
+                        500–1000 MAD
+                    </option>
+
+                    <option value="1000+ MAD">
+                        1000+ MAD
+                    </option>
+
+                </select>
+
+
+                <label for="message">
+                    Tell us about your project
+                </label>
+
+                <textarea
+                    id="message"
+                    name="Message"
+                    rows="5"
+                    placeholder="Tell us what you need..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn primary"
+                >
+                    Send Quote Request
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SOCIAL MEDIA ================= -->
+
+<section class="social-section">
+
+    <h2>Follow Rose Designs</h2>
 
     <p>
-      🌹 Rose Designs
+        More designs, inspiration and new projects coming soon.
     </p>
+
+    <div class="social-links">
+
+        <a href="#" aria-label="Instagram">
+            Instagram
+        </a>
+
+        <a href="#" aria-label="TikTok">
+            TikTok
+        </a>
+
+        <a href="#" aria-label="Facebook">
+            Facebook
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        🌹 Rose Designs
+    </div>
 
     <p>
-      Creative designs for memorable brands.
+        Creative designs for memorable brands.
     </p>
 
-    <p>
-      © 2026 Rose Designs. All rights reserved.
+    <p class="copyright">
+        © 2026 Rose Designs. All rights reserved.
     </p>
 
-  </footer>
+</footer>
 
 
 </body>
-  </html>
+</html>
