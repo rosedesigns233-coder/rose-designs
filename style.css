@@ -570,3 +570,62 @@ footer p {
         font-size: 36px;
     }
 }
+/* ================= PRICING PACKAGES ================= */
+
+.pricing-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.pricing-grid .pricing-card {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.package-description {
+    color: #666;
+    min-height: 55px;
+    margin-bottom: 10px;
+}
+
+.pricing-grid .pricing-card ul {
+    flex: 1;
+}
+
+.pricing-grid .pricing-card .btn {
+    width: 100%;
+}
+
+.pricing-card.featured {
+    border: 2px solid #c2186a;
+    transform: translateY(-10px);
+}
+
+.popular {
+    background: #c2186a;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    display: inline-block;
+    margin: -5px auto 18px;
+}
+
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+        }
